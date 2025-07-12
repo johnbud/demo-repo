@@ -1,4 +1,4 @@
-yamlname: Claude PR Action
+name: Claude PR Action
 
 on:
   issue_comment:
