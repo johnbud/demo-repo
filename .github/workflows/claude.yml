@@ -1,9 +1,3 @@
-steps:
-  - uses: actions/checkout@v4
-  - uses: anthropics/claude-code-action@beta
-    with:
-      anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-
 name: Claude PR Action
 
 on:
@@ -25,6 +19,7 @@ jobs:
     if: contains(github.event.comment.body, '@claude') || contains(github.event.issue.body, '@claude')
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: anthropics/claude-code-action@beta
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
